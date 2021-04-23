@@ -1,6 +1,9 @@
-import React from 'react';
+//scss
 import './Hero.scss';
+//route
+import React from 'react';
 
+//structure Hero
 const Hero = () => {
     return ( 
         <section className="SectionHero">

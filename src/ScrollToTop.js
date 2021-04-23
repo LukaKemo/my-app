@@ -1,6 +1,8 @@
+//imports
 import { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 
+//structure
 function ScrollToTop({ history }) {
   useEffect(() => {
     const unlisten = history.listen(() => {

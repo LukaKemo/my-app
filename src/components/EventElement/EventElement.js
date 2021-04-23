@@ -1,12 +1,15 @@
-import React from 'react';
-import Button from '../Button/Button';
-import { Link } from 'react-router-dom';
+//scss
 import './EventElement.scss';
+//route
+import React from 'react';
+import { Link } from 'react-router-dom';
 
+//links
 const links = {
     event: 'Prijavi se',
 }
 
+//structure EventElement
 const EventElement = ({
     image,
     title,

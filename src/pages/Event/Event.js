@@ -1,7 +1,10 @@
+//scss
+import './Event.scss';
+//Components
 import EventElement from '../../components/EventElement/EventElement';
 import ImageDesign from '../../assets/images/design.jpg'
-import './Event.scss';
 
+//Structure Event Page
 function App() {
     return (
       <>

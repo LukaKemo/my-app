@@ -1,13 +1,18 @@
+//scss
+import './Header.scss';
+//route
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Header.scss';
+//import
 import Logo from '../../assets/images/logo.png';
 
+//links
 const links = {
     home: 'Home',
     events: 'Events',
 }
 
+//structure Header
 const Header = () => {
     return (
         <header className="Header">

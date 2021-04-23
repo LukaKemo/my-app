@@ -1,11 +1,16 @@
-import React from 'react';
-import Button from '../Button/Button';
-import { Link } from 'react-router-dom';
+//scss
 import './Event.scss';
+import '../Button/Button';
+//route
+import React from 'react';
+import { Link } from 'react-router-dom';
 
+//linkovi
 const links = {
     event: 'Find out more',
 }
+
+//main structure Event
 const Event = ({
     image,
     title,

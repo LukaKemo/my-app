@@ -1,5 +1,10 @@
-import React from 'react';
+//scss
 import './Button.scss';
+
+//route
+import React from 'react';
+
+//Button structure
 const Button = ({
     text
 }) => {
@@ -7,4 +12,5 @@ const Button = ({
         <button className="Button">{ text }</button>
     );
 }
+
 export default Button;

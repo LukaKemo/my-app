@@ -1,6 +1,9 @@
-import React from 'react';
+//scss
 import './Section.scss';
+//route
+import React from 'react';
 
+//structure Section
 const Section = ({
     children,
     title,

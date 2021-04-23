@@ -1,12 +1,15 @@
-import React from 'react';
-import Button from '../Button/Button';
-import { Link } from 'react-router-dom';
+//scss
 import './EventCard.scss';
+//route
+import { Link } from 'react-router-dom';
+import React from 'react';
 
+//links
 const links = {
     event: 'Find out more',
 }
 
+//structure EventCard
 const EventCard = ({
     title,
     lokacija,

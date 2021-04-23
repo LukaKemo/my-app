@@ -1,3 +1,14 @@
+//color pallet
+$blackOverlay: rgba(0, 0, 0, 0.7);
+$yellow: #e4b43c;
+$white: #ffffff;
+
+//Breakpoints
+$mobileLarge: "min-width: 576px";
+$desktop: "min-width: 1024px";
+$desktopLarge: "min-width: 1300px";
+
+//Hero section scss
 .SectionHero {
   background-image: url(../../assets/images/hero.jpeg);
   height: 400px;
@@ -6,7 +17,7 @@
   background-attachment: fixed;
 
   &-Overlay {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: $blackOverlay;
     position: relative;
     width: 100%;
     height: 100%;
@@ -21,7 +32,7 @@
   }
 
   &-Heading {
-    color: #e4b43c;
+    color: $yellow;
     line-height: 140%;
     margin-bottom: 30px;
     font-size: 20px;
@@ -30,11 +41,11 @@
   &-Subheading {
     font-size: 14px;
     font-weight: 400;
-    color: #ffffff;
+    color: $white;
     line-height: 160%;
   }
 
-  @media screen and (min-width: 576px) {
+  @media screen and ($mobileLarge) {
     &-Content {
       padding: 0 25px;
     }
@@ -49,7 +60,7 @@
       max-width: 550px;
     }
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and ($desktop) {
     &-Content {
       padding: 0;
       max-width: 993px;
@@ -63,7 +74,7 @@
       max-width: 700px;
     }
   }
-  @media screen and (min-width: 1300px) {
+  @media screen and ($desktopLarge) {
     height: 500px;
     &-Content {
       max-width: 1280px;
@@ -77,43 +88,3 @@
     }
   }
 }
-
-// .section__hero {
-//     background-image: url(images/hero.jpeg);
-//     height: 550px;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     background-attachment: fixed;
-//     margin-top: 80px;
-//     position: relative;
-// }
-// .section__hero_overlay {
-//     background-color: rgba(0, 0, 0, 0.7);
-//     width: 100%;
-//     height: 100%;
-// }
-// .section__hero_content {
-//     max-width: 1280px;
-//     margin: 0 auto;
-//     position: absolute;
-//     top: 50%;
-//     transform: translateY(-50%);
-//     left: 0;
-//     right: 0;
-//     color:white;
-// }
-// .section__hero_heading{
-//     color: #e4b43c;
-//     line-height: 140%;
-//     width: 500px;
-//     margin-bottom: 30px;
-//     max-width: 1280px;
-// }
-
-// .section__hero_subheading{
-//     width: 800px;
-//     font: weight 400px;;
-//     color: #ffffff;
-//     line-height: 30px;
-//     max-width: 1280px;
-// }

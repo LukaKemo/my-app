@@ -1,4 +1,6 @@
+//scss
 import './Home.scss';
+//Components
 import Hero from '../../components/Hero/Hero';
 import Section from '../../components/Section/Section';
 import Grid from '../../components/Grid/Grid';
@@ -8,6 +10,7 @@ import ImageDesign from '../../assets/images/design.jpg'
 import ImageDevelopment from '../../assets/images/development.jpg';
 import ImageMarketing from '../../assets/images/marketing.jpg';
 
+//structure Home Page
 function App() {
   return (
     <>

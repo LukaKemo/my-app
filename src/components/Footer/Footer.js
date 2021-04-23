@@ -1,6 +1,9 @@
-import React from 'react';
+//scss
 import './Footer.scss';
+//route
+import React from 'react';
 
+//structure Footer
 const Footer = () => {
     return ( 
         <footer class="Footer">

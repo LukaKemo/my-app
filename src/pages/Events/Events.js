@@ -1,8 +1,12 @@
+//scss
 import './Events.scss';
+
+//Components
 import Section from '../../components/Section/Section';
 import Grid from '../../components/Grid/Grid';
 import EventCard from '../../components/EventCard/EventCard';
 
+//structure Events Page
 function App() {
   return (
     <>

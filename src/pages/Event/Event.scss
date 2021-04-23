@@ -1,12 +1,18 @@
-//BREAKPOINTS
+//Breakpoints
+$mobileLarge: "min-width: 576px";
+$tablet: "min-width: 768px";
+$desktop: "min-width: 1024px";
+$desktopLarge: "min-width: 1300px";
+
+//Event Page scss
 .EventElement {
-  @media screen and (min-width: 500px) {
+  @media screen and ($mobileLarge) {
     &-Info-Figure {
       height: 300px;
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and ($tablet) {
     padding: 0 25px 65px;
 
     &-Info {
@@ -38,7 +44,7 @@
     }
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and ($desktop) {
     margin: 0 auto;
     padding: 0 0 64px;
     max-width: 930px;
@@ -70,7 +76,7 @@
     }
   }
 
-  @media screen and (min-width: 1300px) {
+  @media screen and ($desktopLarge) {
     max-width: 1280px;
 
     &-Info-Figure {
