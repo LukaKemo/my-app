@@ -36,6 +36,10 @@ $desktopLarge: "min-width: 1300px";
     object-fit: contain;
   }
 
+  &-NavItem {
+    font-weight: bold;
+  }
+
   &-Nav {
     display: none;
   }

@@ -2,7 +2,7 @@
 import './Header.scss';
 //route
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 //import
 import Logo from '../../assets/images/logo.png';
 
@@ -26,8 +26,8 @@ const Header = () => {
                     <div className="Header-NavHamburgerLine"></div>
                 </div>
                 <nav className="Header-Nav">
-                    <Link className="Header-NavItem" to="/home">{links.home}</Link>
-                    <Link className="Header-NavItem" to="/events">{links.events}</Link>
+                    <NavLink className="Header-NavItem" exact={true} to="/home">{links.home}</NavLink>
+                    <NavLink className="Header-NavItem" exact={true} to="/events">{links.events}</NavLink>
                 </nav>
             </div>
 
