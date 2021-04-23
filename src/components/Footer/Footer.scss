@@ -1,13 +1,22 @@
+//color pallet
+$darkGrey: #333333;
+$lightGray: #d0d0d0;
+
+// Breakpoints
+$tablet: "min-width: 768px";
+
+//Footer scss
 .Footer {
-  background-color: #333333;
+  background-color: $darkGrey;
   padding: 20px;
 
   &-Text {
-    color: #d0d0d0;
+    color: $lightGray;
     font-size: 12px;
     text-align: center;
   }
-  @media screen and (min-width: 768px) {
+
+  @media screen and ($tablet) {
     padding: 30px;
 
     &-Text {
