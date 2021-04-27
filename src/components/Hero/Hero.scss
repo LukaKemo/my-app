@@ -1,13 +1,4 @@
-//color pallet
-$blackOverlay: rgba(0, 0, 0, 0.7);
-$yellow: #e4b43c;
-$white: #ffffff;
-
-//Breakpoints
-$mobileLarge: "min-width: 576px";
-$desktop: "min-width: 1024px";
-$desktopLarge: "min-width: 1300px";
-
+@import "../../theme.scss";
 //Hero section scss
 .SectionHero {
   background-image: url(../../assets/images/hero.jpeg);

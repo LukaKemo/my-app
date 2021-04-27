@@ -1,12 +1,4 @@
-//color pallet
-$white: #ffffff;
-$darkGrey: #333333;
-
-// Breakpoints
-$tablet: "min-width: 768px";
-$desktop: "min-width: 1024px";
-$desktopLarge: "min-width: 1300px";
-
+@import "../../theme.scss";
 // Header scss
 .Header {
   background-color: $white;

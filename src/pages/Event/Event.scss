@@ -1,9 +1,4 @@
-//Breakpoints
-$mobileLarge: "min-width: 576px";
-$tablet: "min-width: 768px";
-$desktop: "min-width: 1024px";
-$desktopLarge: "min-width: 1300px";
-
+@import "../../theme.scss";
 //Event Page scss
 .EventElement {
   @media screen and ($mobileLarge) {

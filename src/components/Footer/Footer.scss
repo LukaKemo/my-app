@@ -1,10 +1,4 @@
-//color pallet
-$darkGrey: #333333;
-$lightGray: #d0d0d0;
-
-// Breakpoints
-$tablet: "min-width: 768px";
-
+@import "../../theme.scss";
 //Footer scss
 .Footer {
   background-color: $darkGrey;

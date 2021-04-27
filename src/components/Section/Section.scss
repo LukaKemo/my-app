@@ -1,9 +1,4 @@
-//Breakpoints
-$mobileLarge: "min-width: 576px";
-$tablet: "min-width: 768px";
-$desktop: "min-width: 1024px";
-$desktopLarge: "min-width: 1300px";
-
+@import "../../theme.scss";
 //Section scss
 .Section {
   padding: 60px 15px;
