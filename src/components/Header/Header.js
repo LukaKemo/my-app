@@ -1,10 +1,19 @@
-//scss
-import './Header.scss';
 //route
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-//import
-import Logo from '../../assets/images/logo.png';
+import { NavLink } from 'react-router-dom';
+//import logo
+import LogoImage from '../../assets/images/logo.png';
+//style
+import {
+    HeaderWrapper,
+    Inner,
+    Logo,
+    LogoContainer,
+    Nav,
+    NavItem,
+    NavHamburger,
+    NavHamburgerLine
+}from './HeaderStyle';
 
 //links
 const links = {
@@ -15,23 +24,22 @@ const links = {
 //structure Header
 const Header = () => {
     return (
-        <header className="Header">
-            <div className="Header-Inner">
-                <Link to="/home" className="Header-LogoContainer">
-                    <img src={Logo} className="Header-Logo"/>
-                </Link>
-                <div className="Header-NavHamburger">
-                    <div className="Header-NavHamburgerLine"></div>
-                    <div className="Header-NavHamburgerLine"></div>
-                    <div className="Header-NavHamburgerLine"></div>
-                </div>
-                <nav className="Header-Nav">
-                    <NavLink className="Header-NavItem" exact={true} to="/home">{links.home}</NavLink>
-                    <NavLink className="Header-NavItem" exact={true} to="/events">{links.events}</NavLink>
-                </nav>
-            </div>
-
-        </header>
+        <HeaderWrapper>
+            <Inner>
+                <LogoContainer to="/home">
+                    <Logo src={LogoImage} alt="Logo" />
+                </LogoContainer>
+                <NavHamburger>
+                    <NavHamburgerLine />
+                    <NavHamburgerLine />
+                    <NavHamburgerLine />
+                </NavHamburger>
+                <Nav>
+                    <NavItem exact to="/home">Home</NavItem>
+                    <NavItem to="/events">Events</NavItem>
+                </Nav>
+            </Inner>
+        </HeaderWrapper>
     );
 }
 
