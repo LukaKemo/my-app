@@ -89,7 +89,6 @@ $transitionCubic: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   @media screen and ($desktopLarge) {
     height: 500px;
-
     &-Content {
       max-width: 1280px;
     }
