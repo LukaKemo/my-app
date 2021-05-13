@@ -5,9 +5,7 @@ import './Event.scss';
 //Components
 import EventElement from '../../components/EventElement/EventElement';
 import Title from '../../components/EventElement/EventElement';
-import { Description, EventElementInfo } from '../../components/EventElement/EventElementStyle';
 import Section from '../../components/Section/Section';
-import { Content } from '../../components/Event/EventStyle';
 import Figure from '../../components/EventElement/EventElement';
 import Image from '../../components/EventElement/EventElement';
 
@@ -29,22 +27,22 @@ const Event = (props) => {
         {event && 
           <>
           <Title>{event && event.title}</Title>
-          <Section withoutTopPadding={true}>
-            <Figure>
-              <Image src={event.ImageUrl} alt={event.imageAlt} />
-            </Figure>
-              <EventElement
-                lokacija={event.location}
-                datum={event.dateTime}
-                slobodnaMjesta={event.availability}
-                firma={event.company}
-                buttonText="Prijavi se"
-                description={event.description}
-              />
+          <Figure>
+            <Image src={event.ImageUrl} alt={event.imageAlt} />
+          </Figure>
+          <Section>
+            <EventElement
+              lokacija={event.location}
+              datum={event.dateTime}
+              slobodnaMjesta={event.availability}
+              firma={event.company}
+              buttonText="Prijavi se"
+              description={event.description}
+            />
           </Section>
         </>}
       </>
-    )
+  )
 }
 
 export default Event;

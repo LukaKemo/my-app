@@ -1,7 +1,6 @@
 //route
 import React from 'react';
 import { Button } from '../../lib/style/generalStyles';
-
 //import style components
 import {
     Event as EventWrapper,
@@ -27,7 +26,7 @@ const Event = ({
             </Figure>
             <Title>{title}</Title>
             <Description>{description}</Description>
-            <Button route={route}>{buttonText}</Button>
+            <Button to={route}>{buttonText}</Button>
         </EventWrapper>
     );
 }

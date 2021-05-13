@@ -10,7 +10,7 @@ export const Event = styled.div `
     border-radius: 6px;
     box-shadow: ${boxShadow};
     transition: ${transitionCubic};
-    &-hover {
+    &:hover {
         box-shadow: ${boxShadowHover};
     }
 `;

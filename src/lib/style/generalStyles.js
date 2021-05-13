@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {NavLink} from 'react-router-dom'
 import { 
     colors,
     breakpoints,
@@ -26,7 +27,7 @@ export const Grid = styled.div `
     }
 `;
 
-export const Button = styled.button `
+export const Button = styled(NavLink) `
     display: block;
     text-decoration: none;
     width: 100%;
