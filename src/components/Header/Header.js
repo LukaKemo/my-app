@@ -1,6 +1,5 @@
 //route
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 //import logo
 import LogoImage from '../../assets/images/logo.png';
 //style
@@ -26,7 +25,7 @@ const Header = () => {
     return (
         <HeaderWrapper>
             <Inner>
-                <LogoContainer to="/home">
+                <LogoContainer to="/">
                     <Logo src={LogoImage} alt="Logo" />
                 </LogoContainer>
                 <NavHamburger>
@@ -35,7 +34,7 @@ const Header = () => {
                     <NavHamburgerLine />
                 </NavHamburger>
                 <Nav>
-                    <NavItem exact to="/home">Home</NavItem>
+                    <NavItem exact to="/">Home</NavItem>
                     <NavItem to="/events">Events</NavItem>
                 </Nav>
             </Inner>

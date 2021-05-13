@@ -1,13 +1,20 @@
-//scss
-import './EventElement.scss';
-//route
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 
-//links
-const links = {
-    event: 'Prijavi se',
-}
+//import style components
+import {
+    EventElement as EventWrapper,
+    Title,
+    EventElementInfo,
+    Figure,
+    Image,
+    Content,
+    Row,
+    Item,
+    ItemTitle,
+    ItemValue,
+    Description
+} from './EventElementStyle';
 
 //structure EventElement
 const EventElement = ({
@@ -17,42 +24,44 @@ const EventElement = ({
     datum,
     slobodnaMjesta,
     firma,
-    buttonText
+    buttonText,
+    imageAlt,
+    route
 }) => {
     return (
-        <div className="EventElement">
-            <h2 className="EventElement-Title">{title}</h2>
-            <div className="EventElement-Info">
-                <figure className="EventElement-Info-Figure">
-                    <img src={image} alt="UX/UI workshop" className="EventElement-Info-Figure-Image"></img>
-                </figure>
-                <div className="EventElement-Info-Content">
-                    <div className="EventElement-Info-Content-Row">
-                        <div className="EventElement-Info-Item">
-                            <h3 className="EventElement-Info-ItemTitle">Lokacija</h3>
-                            <p className="EventElement-Info-ItemValue">{lokacija}</p>
-                        </div>
-                        <div className="EventElement-Info-Item">
-                            <h3 className="EventElement-Info-ItemTitle">Datum i vrijeme</h3>
-                            <p className="EventElement-Info-ItemValue">{datum}</p>
-                        </div>
-                    </div>
-                    <div className="EventElement-Info-Content-Row">
-                        <div className="EventElement-Info-Item">
-                            <h3 className="EventElement-Info-ItemTitle">Slobodna mjesta</h3>
-                            <p className="EventElement-Info-ItemValue">{slobodnaMjesta}</p>
-                        </div>
-                        <div className="EventElement-Info-Item">
-                            <h3 className="EventElement-Info-ItemTitle">Firma</h3>
-                            <p className="EventElement-Info-ItemValue">{firma}</p>
-                        </div>
-                    </div>
-                    <div className="EventElement-Info-Content-Row">
-                    <Link text={buttonText} className="Button" to="/event">{links.event}</Link>
-                    </div>
-                </div>
-            </div>
-            <div className="EventElement-Description">
+        <EventWrapper>
+            <Title>{title}</Title>
+            <EventElementInfo>
+                <Figure>
+                    <Image src={image} alt={imageAlt} />
+                </Figure>
+                <Content>
+                    <Row>
+                        <Item>
+                            <ItemTitle>Lokacija</ItemTitle>
+                            <ItemValue>{lokacija}</ItemValue>
+                        </Item>
+                        <Item>
+                            <ItemTitle>Datum i vrijeme</ItemTitle>
+                            <ItemValue>{datum}</ItemValue>
+                        </Item>
+                    </Row>
+                    <Row>
+                        <Item>
+                            <ItemTitle>Slobodna mjesta</ItemTitle>
+                            <ItemValue>{slobodnaMjesta}</ItemValue>
+                        </Item>
+                        <Item>
+                            <ItemTitle>Firma</ItemTitle>
+                            <ItemValue>{firma}</ItemValue>
+                        </Item>
+                    </Row>
+                    <Row>
+                    <Button text={buttonText} route={route} />
+                    </Row>
+                </Content>
+            </EventElementInfo>
+            <Description>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique, ex sit amet semper
                 elementum, libero nisl condimentum dolor, a dictum risus lectus quis justo. Quisque consequat ut
                 lorem vitae commodo. Nunc dictum quam dui, auctor fermentum libero viverra consequat. Pellentesque
@@ -63,8 +72,8 @@ const EventElement = ({
                 tortor pretium in. Sed efficitur pellentesque ante, eget semper purus interdum ac. Integer lacinia,
                 velit dapibus congue consectetur, nisi justo consectetur felis, sit amet placerat lacus libero in
                 dui. Quisque quis nisi felis.
-            </div>
-        </div>
+            </Description>
+        </EventWrapper>
     );
 }
 

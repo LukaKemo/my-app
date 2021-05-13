@@ -7,7 +7,7 @@ import { Grid } from '../../lib/style/generalStyles';
 import EventCard from '../../components/EventCard/EventCard';
 
 //structure Events Page
-function App() {
+function Events() {
   return (
     <>
         <Section title="Events">
@@ -82,4 +82,4 @@ function App() {
   );
 }
 
-export default App;
+export default Events;

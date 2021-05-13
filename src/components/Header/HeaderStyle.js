@@ -5,7 +5,7 @@ import {
     breakpoints,
     transitionEase
 } from '../../lib/style/theme';
-import { NavLink } from 'react-router-dom';
+import {Link, NavLink } from 'react-router-dom';
 
 export const HeaderWrapper = styled.header `
         background-color: ${colors.white}};
@@ -45,7 +45,7 @@ export const Logo = styled.img `
         object - fit: contain;
 `;
 
-export const LogoContainer = styled(NavLink) `
+export const LogoContainer = styled(Link) `
         display: block;
         width: 50px;
 
@@ -71,6 +71,10 @@ export const NavItem = styled(NavLink) `
         margin-right: 0;
     }
 
+    &_active {
+        color: ${colors.red};
+    }
+
     @media screen and (${breakpoints.desktop}) {
         display: inline-block;
         text-decoration: none;
@@ -86,7 +90,6 @@ export const NavItem = styled(NavLink) `
     @media screen and (${breakpoints.desktopLarge}) {
         font-size: 18 px;
     }
-
 `;
 
 export const NavHamburger = styled.div `
