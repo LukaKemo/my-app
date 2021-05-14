@@ -1,5 +1,3 @@
-//scss
-import './Main.scss';
 //route
 import React from 'react';
 

@@ -1,16 +1,19 @@
-//scss
-import './Footer.scss';
 //route
 import React from 'react';
 
-//structure Footer
-const Footer = () => {
+//import
+import {
+    Footer as FooterWrapper,
+    Text
+}from './FooterStyle';
+
+//main structure Footer
+const Footer = ({text}) => {
     return ( 
-        <footer class="Footer">
-            <div>
-                <p class= "Footer-Text">Copyright &copy; 2021 Speck Academy</p>
-            </div>
-        </footer>
+        <FooterWrapper>
+            <Text>Copyright &copy; 2021 Speck Academy</Text>
+        </FooterWrapper>
+
      );
 }
  

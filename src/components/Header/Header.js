@@ -14,12 +14,6 @@ import {
     NavHamburgerLine
 }from './HeaderStyle';
 
-//links
-const links = {
-    home: 'Home',
-    events: 'Events',
-}
-
 //structure Header
 const Header = () => {
     return (

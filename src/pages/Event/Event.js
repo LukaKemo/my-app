@@ -30,10 +30,9 @@ const Event = (props) => {
               datum={event.dateTime}
               slobodnaMjesta={event.availability}
               firma={event.company}
-              buttonText="Prijavi se"
               description={event.description}
-              route="/event"
-              hasButton={true}
+              route="/"
+              buttonText="Prijavi se"
             />
           </Section>
         </>}

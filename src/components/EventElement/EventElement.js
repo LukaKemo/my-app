@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button/Button';
+import { Button } from '../../lib/style/generalStyles';
 
 //import
 import {
@@ -57,7 +57,7 @@ const EventElement = ({
                         </Item>
                     </Row>
                     <Row>
-                    <Button text={buttonText} route={route} />
+                    <Button text={buttonText} to={route} />
                     </Row>
                 </Content>
             </EventElementInfo>
