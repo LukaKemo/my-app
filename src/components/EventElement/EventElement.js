@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from '../Button/Button';
 
-//import style components
+//import
 import {
-    EventElement as EventWrapper,
+    EventElement as EventElementWrapper,
     Title,
     EventElementInfo,
     Figure,
@@ -18,7 +18,7 @@ import {
 
 //structure EventElement
 const EventElement = ({
-    image,
+    imageUrl,
     title,
     lokacija,
     datum,
@@ -29,11 +29,11 @@ const EventElement = ({
     route
 }) => {
     return (
-        <EventWrapper>
+        <EventElementWrapper>
             <Title>{title}</Title>
             <EventElementInfo>
                 <Figure>
-                    <Image src={image} alt={imageAlt} />
+                    <Image src={imageUrl} alt={imageAlt} />
                 </Figure>
                 <Content>
                     <Row>
@@ -73,7 +73,7 @@ const EventElement = ({
                 velit dapibus congue consectetur, nisi justo consectetur felis, sit amet placerat lacus libero in
                 dui. Quisque quis nisi felis.
             </Description>
-        </EventWrapper>
+        </EventElementWrapper>
     );
 }
 
