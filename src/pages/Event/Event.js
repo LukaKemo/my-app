@@ -4,7 +4,6 @@ import eventsMock from '../../lib/style/mock/events';
 import './Event.scss';
 //Components
 import EventElement from '../../components/EventElement/EventElement';
-import Title from '../../components/EventElement/EventElement';
 import Section from '../../components/Section/Section';
 
 const Event = (props) => {
@@ -18,14 +17,13 @@ const Event = (props) => {
 
   useEffect(() => {
     events && setEvent(...events.filter(event => event.id === routeEventId));
-    }, [events]);
+    }, [events, routeEventId]);
 
     return (
       <>
         {event && 
           <>
-          <Title>{event && event.title}</Title>
-          <Section>
+          <Section title={event.title}>
             <EventElement
               imageUrl={event.imageUrl}
               lokacija={event.location}
