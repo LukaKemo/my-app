@@ -1,5 +1,6 @@
 //route
 import React from 'react';
+import Icon from '../Icon/Icon';
 //import logo
 import LogoImage from '../../assets/images/logo.png';
 //style
@@ -9,9 +10,7 @@ import {
     Logo,
     LogoContainer,
     Nav,
-    NavItem,
-    NavHamburger,
-    NavHamburgerLine
+    NavItem
 }from './HeaderStyle';
 
 //structure Header
@@ -22,11 +21,7 @@ const Header = () => {
                 <LogoContainer to="/">
                     <Logo src={LogoImage} alt="Logo" />
                 </LogoContainer>
-                <NavHamburger>
-                    <NavHamburgerLine />
-                    <NavHamburgerLine />
-                    <NavHamburgerLine />
-                </NavHamburger>
+                <Icon></Icon>
                 <Nav>
                     <NavItem exact to="/">Home</NavItem>
                     <NavItem to="/events">Events</NavItem>

@@ -94,6 +94,10 @@ export const NavItem = styled(NavLink) `
 
 export const NavHamburger = styled.div `
     width: 25px;
+    cursor: pointer;
+    border: none;
+    z-index: 10;
+    display: inline-block;
 
     @media screen and (${breakpoints.desktop}) {
         display: none;
@@ -103,12 +107,21 @@ export const NavHamburger = styled.div `
 export const NavHamburgerLine = styled.div `
     width: 100%;
     height: 2px;
-    border-radius: 100px;
+    border-radius: 10px;
     background-color: ${colors.darkGrey};
     margin-bottom: 6px; 
+    transition: ${transitionEase};
+    overflow-y: scroll;
+    overflow: hidden;
 
     &:last-child {
       margin-bottom: 0;
+    }
+`;
+
+export const menuNav = styled.ul `
+    &:showMenu {
+        width: 100%;
     }
 `;
 
