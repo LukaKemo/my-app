@@ -22,7 +22,7 @@ const Events = (props) => {
           setEvents(eventsMock);
         }, 3000);
       }, [events]);
-//pokušaj
+
   return (
     <>
         <Section title="Events">
