@@ -1,19 +1,18 @@
 import React from 'react';
 import {
-    SearchBar as SearchBox,
+    SearchBarBox,
     SearchBarContainer
 } from './SearchBarStyle';
-const SearchBar = ({ 
-    keyword,
- }) => {
+const SearchBar = props => {
   return (
-        <SearchBarContainer>
-            <SearchBox
-                key="random"
-                value={keyword}
-                placeholder={"Search events by the title..."}
+        <SearchBarBox>
+            <SearchBarContainer
+                type='text'
+                placeholder={props.placeholder}
+                disabled={props.disabled}
+                onChange={event => props.onValueChange(event.target.value)}
                 />
-        </SearchBarContainer>
+        </SearchBarBox>
   )
 }
 

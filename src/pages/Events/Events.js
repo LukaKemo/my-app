@@ -11,23 +11,25 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 //structure Events Page
 const Events = (props) => {
     const [events, setEvents] = useState(null);    
-    const [searchTerm, setSearchTerm] = useState("");
-    const searchHandler = () => {};
+    const [searchTerm, setSearchTerm] = useState(null);
+    const searchHandler = value => {const searchResult = searchTerm.filter(event => event.title.toLowerCase().includes(value.toLowerCase()));
+    setEvents(searchResult);
+    }
+
     useEffect(() => {
+      setSearchTerm(eventsMock)
         setTimeout(() => {
           setEvents(eventsMock);
-        }, 1000);
+        }, 3000);
       }, [events]);
-
-
 
   return (
     <>
         <Section title="Events">
             <SearchBar
-                type="text"
-                value={props.inputValue} 
-                onChange={props.eventsFilterOnChange}
+                placeholder='Search events by title...'
+                disabled={events ? false : true}
+                onValueChange={searchHandler}
             />
             {events &&
                 <Grid columns={3}>
