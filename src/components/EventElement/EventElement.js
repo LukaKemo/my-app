@@ -57,7 +57,7 @@ const EventElement = ({
                         </Item>
                     </Row>
                     <Row>
-                    <Button text={buttonText} to={route} />
+                    <Button to={route}>{buttonText}</Button>
                     </Row>
                 </Content>
             </EventElementInfo>
