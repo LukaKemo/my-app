@@ -22,8 +22,9 @@ export const Grid = styled.div `
     }
 
     @media screen and (${breakpoints.desktopLarge}) {
-    ${props => props.columns === 3 &&
-        'padding: 0 84px'}
+        grid-template-columns: repeat(4, 1fr);
+            ${props => props.columns === 3 &&
+                'padding: 0 84px'}
     }
 `;
 
