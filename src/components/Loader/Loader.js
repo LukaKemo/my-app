@@ -2,6 +2,7 @@ import React from 'react';
 import Loader from "react-loader-spinner";
 
 const Loading = () => {
+    const style = ""
     return (
         <Loader
         type="ThreeDots"
