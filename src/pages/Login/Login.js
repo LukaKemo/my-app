@@ -42,8 +42,8 @@ const Login = () => {
     return (
         <>
         <Section title="Login">
-            {isLoading
-                ? <Form onSubmit={Formik.handleSubmit}>
+            {!isLoading
+                ? <Form onSubmit={formik.handleSubmit}>
                     <FormRow>
                         <InputLabel htmlFor='email'>Email</InputLabel>
                         <InputText
@@ -69,10 +69,14 @@ const Login = () => {
                         }
                     </FormRow>
                     <FormRow>
-                        <RegisterButton type="submit" >Prijavi se</RegisterButton>
+                    <RegisterButton
+                        {...formik.getFieldProps('login')}
+                        route="/login"
+                        type='submit'
+                    >Login</RegisterButton>                    
                     </FormRow>
                 </Form>
-                :isLoading
+            :isLoading
             }
         </Section>
     </>

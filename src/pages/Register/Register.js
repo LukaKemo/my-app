@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useFormik } from 'formik';
+import { useFormik, yupToFormErrors } from 'formik';
 import * as Yup from 'yup';
 //Components
 import Section from '../../components/Section/Section';
@@ -14,7 +14,6 @@ import {
     InputError,
     RegisterButton
 } from '../../lib/style/generalStyles';
-import { yupToFormErrors } from 'formik';
 
 const Register = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -35,8 +34,6 @@ const Register = () => {
             email: Yup.string()
                 .email('Invalid email adress')
                 .required('Email is required'),
-            register: Yup.bool()
-                .required('Data is required'),
             password: Yup.string()
                 .min(8, 'Password must be at least 8 characters long')
                 .required('Password is required'),
@@ -48,6 +45,7 @@ const Register = () => {
                         return this.parent.password === value
                     }
                 )
+                .required('Password confirmation is required'),
             }),
             onSubmit: values => {
                 setIsLoading(true);
@@ -71,7 +69,8 @@ const Register = () => {
                             type='text'
                             {...formik.getFieldProps('firstName')}
                         />
-                        {formik.touched.firstName && formik.errors.fisrtName ? <InputError>{formik.errors.firstName}</InputError>
+                        {formik.touched.firstName && formik.errors.fisrtName 
+                        ? <InputError>{formik.errors.firstName}</InputError>
                         : null
                         }
                     </FormRow>
@@ -82,7 +81,8 @@ const Register = () => {
                             type='text'
                             {...formik.getFieldProps('lastName')}
                         />
-                        {formik.touched.lastName && formik.errors.lastName ? <InputError>{formik.errors.lastName}</InputError>
+                        {formik.touched.lastName && formik.errors.lastName 
+                        ? <InputError>{formik.errors.lastName}</InputError>
                         : null
                         }
                     </FormRow>
@@ -93,7 +93,8 @@ const Register = () => {
                             type='text'
                             {...formik.getFieldProps('email')}
                         />
-                        {formik.touched.email && formik.errors.email ? <InputError>{formik.errors.email}</InputError>
+                        {formik.touched.email && formik.errors.email 
+                        ? <InputError>{formik.errors.email}</InputError>
                         : null
                         }
                     </FormRow>
@@ -104,7 +105,8 @@ const Register = () => {
                             type='text'
                             {...formik.getFieldProps('password')}
                         />
-                        {formik.touched.password && formik.errors.password ? <InputError>{formik.errors.password}</InputError>
+                        {formik.touched.password && formik.errors.password 
+                        ? <InputError>{formik.errors.password}</InputError>
                         : null
                         }
                     </FormRow>
@@ -115,7 +117,8 @@ const Register = () => {
                             type='text'
                             {...formik.getFieldProps('passwordConfirmation')}
                         />
-                        {formik.touched.passwordConfirmation && formik.errors.passwordConfirmation ? <InputError>{formik.errors.passwordConfirmation}</InputError>
+                        {formik.touched.passwordConfirmation && formik.errors.passwordConfirmation 
+                        ? <InputError>{formik.errors.passwordConfirmation}</InputError>
                         : null
                         }
                     </FormRow>
@@ -127,10 +130,10 @@ const Register = () => {
                     <RegisterButton
                         {...formik.getFieldProps('register')}
                         route="/register"
-                        buttonText="Register"
                         type='submit'
-                    />
-                        {formik.touched.register && formik.errors.register ? <InputError>{formik.errors.register}</InputError>
+                    >Register</RegisterButton>
+                        {formik.touched.register && formik.errors.register 
+                        ? <InputError>{formik.errors.register}</InputError>
                         : null
                         }
                 </Form>
