@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup';
 //Components
-import Loader from "react-loader-spinner";
 import Section from '../../components/Section/Section';
 
 import {
@@ -73,7 +72,7 @@ const Login = () => {
                         <RegisterButton type="submit" >Prijavi se</RegisterButton>
                     </FormRow>
                 </Form>
-                : <Loader />   
+                :isLoading
             }
         </Section>
     </>

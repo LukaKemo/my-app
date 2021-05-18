@@ -18,6 +18,14 @@ const Section = ({
     return (
         <SectionWrapper>
             {title && <Title>{ title }</Title>}
+            <Loader
+            style = { style }
+            type="TailSpin"
+            color='#e4b43c'
+            height={100}
+            width={100}
+            timeout={1000}
+        />
             { children }
         </SectionWrapper>
     );
