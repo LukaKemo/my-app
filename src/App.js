@@ -16,6 +16,7 @@ import Events from './pages/Events/Events';
 import Event from './pages/Event/Event';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import Admin from './pages/Admin/Admin';
 
 //main App Component Class
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
             <Route path="/event/:id" component={Event} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/admin" component={Admin} />
         </Main>
         <Footer />
       </>
