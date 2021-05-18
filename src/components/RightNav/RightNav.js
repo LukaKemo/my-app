@@ -8,6 +8,8 @@ const RightNav = ({ open }) => {
     <Ul open={open}>
       <Item exact to="/">Home</Item>
       <Item to="/events">Events</Item>
+      <Item to="/login">Login</Item>
+      <Item to="/register">Register</Item>
     </Ul>
   )
 }

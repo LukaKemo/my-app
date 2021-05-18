@@ -1,6 +1,6 @@
 //route
 import React from 'react';
-import { Button } from '../../lib/style/generalStyles';
+import { ButtonRegular } from '../../lib/style/generalStyles';
 
 //import style components
 import {
@@ -27,7 +27,7 @@ const Event = ({
             </Figure>
             <Title>{title}</Title>
             <Description>{description}</Description>
-            <Button to={route}>{buttonText}</Button>
+            <ButtonRegular to={route}>{buttonText}</ButtonRegular>
         </EventWrapper>
     );
 }

@@ -14,6 +14,8 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Events from './pages/Events/Events';
 import Event from './pages/Event/Event';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 
 //main App Component Class
 class App extends Component {
@@ -25,6 +27,8 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/events" component={Events} />
             <Route path="/event/:id" component={Event} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
         </Main>
         <Footer />
       </>

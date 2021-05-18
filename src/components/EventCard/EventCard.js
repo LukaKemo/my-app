@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../../lib/style/generalStyles';
+import { ButtonRegular } from '../../lib/style/generalStyles';
 //import
 import {
     EventCard as EventCardWrapper,
@@ -46,7 +46,7 @@ const EventCard = ({
                     </Item>
                 </Row>
             </Content>
-            <Button to={route}>{buttonText}</Button>
+            <ButtonRegular to={route}>{buttonText}</ButtonRegular>
         </EventCardWrapper>
     );
 }

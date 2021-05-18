@@ -71,7 +71,7 @@ export const NavItem = styled(NavLink) `
         margin-right: 0;
     }
 
-    &_active {
+    &.active {
         color: ${colors.red};
     }
 
