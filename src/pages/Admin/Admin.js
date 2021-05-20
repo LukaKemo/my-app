@@ -8,8 +8,10 @@ const Admin = () => {
 
   return (
     <>
-        <Section title="Featured events">
-            <Table />
+        <Section title="Admin page">
+            <Table
+              buttonText="Add Event"
+            />
         </Section>
     </>
   )

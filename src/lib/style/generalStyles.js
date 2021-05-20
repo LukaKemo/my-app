@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {NavLink} from 'react-router-dom'
 import { 
     colors,
@@ -28,7 +28,7 @@ export const Grid = styled.div `
     }
 `;
 
-export const ButtonDefault = styled.div `
+export const ButtonDefault = css `
     display: block;
     text-decoration: none;
     width: 100%;
@@ -54,52 +54,11 @@ export const ButtonDefault = styled.div `
 `;
 
 export const ButtonRegular = styled(NavLink) `
-    display: block;
-    text-decoration: none;
-    width: 100%;
-    line-height: 40px;
-    text-align: center;
-    border: 1px solid ${colors.red};
-    border-radius: 6px;
-    background: ${colors.red};
-    color: ${colors.white};
-    transition: ${transitionEase};
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
-
-    &:hover {
-    cursor: pointer;
-    border-color: ${colors.yellow};
-    background: ${colors.yellow};
-    }
-
-    &:focus {
-    outline: none;
-    }`;
+    ${ButtonDefault}    
+`;
 
 export const RegisterButton = styled.button `
-    display: block;
-    text-decoration: none;
-    width: 100%;
-    line-height: 40px;
-    text-align: center;
-    border: 1px solid ${colors.red};
-    border-radius: 6px;
-    background: ${colors.red};
-    color: ${colors.white};
-    transition: ${transitionEase};
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
-
-    &:hover {
-    cursor: pointer;
-    border-color: ${colors.yellow};
-    background: ${colors.yellow};
-    }
-
-    &:focus {
-    outline: none;
-    }
+    ${ButtonDefault}    
 `;
 
 export const Form = styled.form `

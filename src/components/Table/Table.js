@@ -1,19 +1,25 @@
 //import
-import React from 'react';
+import React, { useState } from 'react';
 import {  RegisterButton } from '../../lib/style/generalStyles';
-
-/*import {
-    Section as SectionWrapper,
-    Title,
-}from './SectionStyle';
-*/
+import ModalForm from '../Modal/ModalForm';
+import {
+    Form
+} from '../../lib/style/generalStyles';
 //structure Table
 const Table = ({
-    route,
     buttonText
 }) => {
+    const [open, setOpen] = useState(false);
+    const openForm = () => setOpen(true);
+
     return (
-        <RegisterButton >Add event</RegisterButton>
+        <Form>
+            <ModalForm 
+                isOpen={open}
+                handleClose={() => setOpen(false)}
+            />
+            <RegisterButton onClick={() => setOpen(true)}>{buttonText}</RegisterButton>
+        </Form>
         );
 }
 
