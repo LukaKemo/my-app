@@ -5,6 +5,7 @@ import {
     breakpoints,
     transitionEase
 } from '../../lib/style/theme';
+import ReactDatePicker from 'react-datepicker';
 
 export const Grid = styled.div `
     display: grid;
@@ -63,7 +64,7 @@ export const RegisterButton = styled.button `
 export const OpenModule = styled.button `
     ${ButtonDefault}    
 `;
-export const TestniKurac = styled.div `
+export const Wrapper = styled.div `
     background-color: white;
     top: 0;
     left: calc(50% - 200px);   
@@ -82,6 +83,16 @@ export const Form = styled.form `
 
 export const FormRow = styled.div `
     margin-bottom:32px;
+    padding: 0;
+    &:last-child {
+        bottom-margin:none;
+    }
+`;
+
+export const DateRow = styled.div `
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:15px;
     padding: 0;
     &:last-child {
         bottom-margin:none;
@@ -123,11 +134,28 @@ export const InputText = styled.input `
     }
 `;
 
+export const InputCapacity = styled.input `
+    border: 1px solid ${colors.lightGrey};
+    border-radius: 6px;
+    width:50%;
+    line-height: 10px;
+    padding: 0 10px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    &:focus {
+        border-color: ${colors.yellow}
+    }
+    @media screen and (${breakpoints.desktop}){
+        font-size:16px;
+    }
+`;
+
 export const TextArea = styled.textarea `
     border: 1px solid ${colors.lightGrey};
     border-radius: 6px;
     width:100%;
-    line-height: 150%;
+    line-height: 100%;
     padding: 10px;
     outline: none;
     font-size: 14px;
