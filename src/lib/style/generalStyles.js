@@ -60,6 +60,16 @@ export const ButtonRegular = styled(NavLink) `
 export const RegisterButton = styled.button `
     ${ButtonDefault}    
 `;
+export const OpenModule = styled.button `
+    ${ButtonDefault}    
+`;
+export const TestniKurac = styled.div `
+    background-color: white;
+    top: 0;
+    left: calc(50% - 200px);   
+    position: absolute;
+`;
+
 
 export const Form = styled.form `
     width:100%;
