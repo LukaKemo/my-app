@@ -1,7 +1,8 @@
 //import
 import React, { useState } from 'react';
-import {  RegisterButton } from '../../lib/style/generalStyles';
+import {  RegisterButton,OpenModule } from '../../lib/style/generalStyles';
 import ModalForm from '../Modal/ModalForm';
+import {Modal} from 'react-responsive-modal'
 import {
     Form
 } from '../../lib/style/generalStyles';
@@ -10,15 +11,16 @@ const Table = ({
     buttonText
 }) => {
     const [open, setOpen] = useState(false);
-    const openForm = () => setOpen(true);
+    const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
 
     return (
         <Form>
-            <ModalForm 
-                isOpen={open}
-                handleClose={() => setOpen(false)}
-            />
-            <RegisterButton onClick={() => setOpen(true)}>{buttonText}</RegisterButton>
+        <Modal  open={open} onClose={onCloseModal}>
+        <ModalForm />
+        </Modal>
+            
+            <OpenModule onClick={(e) =>{e.preventDefault();onOpenModal()}}>{buttonText}</OpenModule>
         </Form>
         );
 }
