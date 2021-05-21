@@ -9,6 +9,7 @@ import {
     Form,
     FormRow,
     CheckBoxWrapper,
+    TestniKurac,
     InputLabel,
     InputText,
     InputError,
@@ -63,7 +64,7 @@ const ModalForm = () => {
           });
 
     return (
-        <>
+        <TestniKurac>
         <Section title="Add new event">
             {!isLoading
                 ? <Form>
@@ -123,7 +124,7 @@ const ModalForm = () => {
                 </Form>
             :isLoading}
         </Section>
-        </>
+        </TestniKurac>
     )
 };
 
