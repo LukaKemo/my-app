@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Formik, useFormik } from 'formik';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
 //Components
 import Section from '../../components/Section/Section';
@@ -10,12 +10,18 @@ import {
     InputLabel,
     InputText,
     InputError,
-    RegisterButton
+    RegisterButton,
+    SuccessMessage
 } from '../../lib/style/generalStyles';
-import { yupToFormErrors } from 'formik';
+import { loginUser } from '../../API/login';
+import { getAllUsers } from '../../API/user';
 
 const Login = () => {
-    const [ isLoading, setIsLoading ] =useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [isRequestFinished, setIsRequestFinished] = useState(false);
+
     const formik = useFormik ({
         initialValues: {
             email: '',
@@ -29,26 +35,46 @@ const Login = () => {
                 .min(8, 'Password must be at least 8 characters long')
                 .required('Password is required'),
         }),
-        onSubmit: values => {
-            setIsLoading (true);
+        onSubmit: async (values, { resetForm }) => {
+            setIsLoading(true);
+            setIsError(false);
+            setIsRequestFinished(false);
+            try {
+                const response = await loginUser(values); 
+                const users = await getAllUsers(response.token);
+                const isAdmin = users.find(user => user.email === values.email).isAdmin;
+                
+                localStorage.setItem("authToken", response.token);
+                localStorage.setItem("isAdmin", isAdmin);
 
-            setTimeout (() => {
+                resetForm({});
+                setSuccessMessage("You've logged in!");
+                setTimeout(() => {
+                    setIsRequestFinished(false);
+                }, 4000);
+            } catch (error) {
+                setIsError(true);
+                setSuccessMessage("Something went wrong!");
+            } finally {
                 setIsLoading(false);
-                alert(JSON.stringify(values));
-            }, 1000);
-    },
+                setIsRequestFinished(true);
+            }
+    }
 });
 
     return (
         <>
         <Section title="Login">
+            {isRequestFinished &&
+                <SuccessMessage isError={isError}>{successMessage}</SuccessMessage>
+            }
             {!isLoading
                 ? <Form onSubmit={formik.handleSubmit}>
                     <FormRow>
                         <InputLabel htmlFor='email'>Email</InputLabel>
                         <InputText
                                 id='email'
-                                type='email'
+                                type='text'
                                 {...formik.getFieldProps('email')}
                         />
                         {formik.touched.email && formik.errors.email 
@@ -60,7 +86,7 @@ const Login = () => {
                         <InputLabel htmlFor='password'>Password</InputLabel>
                         <InputText
                             id='password'
-                            type='password'
+                            type='text'
                             {...formik.getFieldProps('password')}
                         />
                         {formik.touched.password && formik.errors.password 
@@ -73,7 +99,11 @@ const Login = () => {
                         {...formik.getFieldProps('login')}
                         route="/login"
                         type='submit'
-                    >Login</RegisterButton>                    
+                    >Login</RegisterButton>
+                        {formik.touched.login && formik.errors.login 
+                        ? <InputError>{formik.errors.login}</InputError>
+                        : null
+                        }            
                     </FormRow>
                 </Form>
             :isLoading

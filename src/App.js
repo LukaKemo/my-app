@@ -2,7 +2,7 @@
 import './App.scss';
 
 //route
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { Route } from 'react-router-dom';
 
 //komponente
@@ -21,6 +21,12 @@ import Admin from './pages/Admin/Admin';
 //main App Component Class
 class App extends Component {
   render() {
+    useEffect(() => {
+      console.log(localStorage.getItem("authToken"));
+      console.log(localStorage.getItem("isAdmin"));
+    }, [])
+
+
     return (
       <>
         <Header />
