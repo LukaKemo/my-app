@@ -16,7 +16,7 @@ import {
 import { loginUser } from '../../API/login';
 import { getAllUsers } from '../../API/user';
 
-const Login = () => {
+const Login = props => {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [successMessage, setSuccessMessage] = useState("");
@@ -65,6 +65,8 @@ const Login = () => {
     return (
         <>
         <Section title="Login">
+        <p>Logged in status: {props.user}</p>
+        <button onClick={props.handleLogout}>Log Out</button>
             {isRequestFinished &&
                 <SuccessMessage isError={isError}>{successMessage}</SuccessMessage>
             }
@@ -96,8 +98,8 @@ const Login = () => {
                     </FormRow>
                     <FormRow>
                     <RegisterButton
+                        onClick={props.handleLogin}
                         {...formik.getFieldProps('login')}
-                        route="/login"
                         type='submit'
                     >Login</RegisterButton>
                         {formik.touched.login && formik.errors.login 

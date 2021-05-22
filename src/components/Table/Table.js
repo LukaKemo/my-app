@@ -30,7 +30,7 @@ import {
 
 //structure Table
 const TableEvent = (props) => {
-    const [events, setEvents] = useState(null);
+    const [events, setEvents] = useState([]);
     const [open, setOpen] = useState(false);
     const onOpenModal = () => setOpen(true);
     const onCloseModal = () => setOpen(false);
@@ -53,9 +53,27 @@ const TableEvent = (props) => {
         { value: 'bornfight', label: 'Bornfight' },
         { value: 'agency04', label: 'Agency 04' }
       ]
+
+      const addEvent = (e) => {
+        e.preventDefault();
+        const newEvent = {
+          id:Math.random().toString(36).substr(2, 9),
+          title: e.target.event.value,
+          description: e.target.event.value,
+          category: e.target.event.value,
+          date: e.target.event.value,
+          timeFrom: e.target.event.value,
+          timeTo: e.target.event.value,
+          capacity: e.target.event.value,
+          firm: e.target.event.value,
+        };
+        setEvents([...events, newEvent]);
+        e.target.event.value = "";
+      };
     const [isLoading, setIsLoading] = useState(false);
     const formik = useFormik ({
         initialValues: {
+            id: '',
             title: '',
             description: '',
             category: '',
@@ -235,13 +253,13 @@ const TableEvent = (props) => {
 
                         <TableBody>
                                 <td>
-                                    <td>{events.id}</td>
-                                    <td>{events.title}</td>
-                                    <td>{events.date}</td>
-                                    <td>{events.timeFrom}</td>
-                                    <td>{events.timeTo}</td>
-                                    <td>{events.capacity}</td>
-                                    <td>{events.firm}</td>
+                                    <td>{addEvent.id}</td>
+                                    <td>{addEvent.title}</td>
+                                    <td>{addEvent.date}</td>
+                                    <td>{addEvent.timeFrom}</td>
+                                    <td>{addEvent.timeTo}</td>
+                                    <td>{addEvent.capacity}</td>
+                                    <td>{addEvent.firm}</td>
                                 </td>
                         </TableBody>
                     </Structure>
