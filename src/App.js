@@ -21,12 +21,6 @@ import Admin from './pages/Admin/Admin';
 //main App Component Class
 class App extends Component {
   render() {
-    useEffect(() => {
-      console.log(localStorage.getItem("authToken"));
-      console.log(localStorage.getItem("isAdmin"));
-    }, [])
-
-
     return (
       <>
         <Header />
