@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { AuthContext } from '../../components/Context/AuthContext';
 //Components
 import Section from '../../components/Section/Section';
 
@@ -17,6 +18,12 @@ import { loginUser } from '../../API/login';
 import { getAllUsers } from '../../API/user';
 
 const Login = props => {
+    const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext);
+
+    const handleAuth = () => {
+      setIsLoggedIn(isLoggedIn=true);
+    }
+
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [successMessage, setSuccessMessage] = useState("");
@@ -98,7 +105,7 @@ const Login = props => {
                     </FormRow>
                     <FormRow>
                     <RegisterButton
-                        onClick={props.handleLogin}
+                        onClick={props.handleLogin, handleAuth}
                         {...formik.getFieldProps('login')}
                         type='submit'
                     >Login</RegisterButton>

@@ -4,11 +4,14 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ScrollToTop from './ScrollToTop';
+import { AuthProvider } from './components/Context/AuthContext';
 
 ReactDOM.render(
   <Router>
+  <AuthProvider>
     <ScrollToTop />
-    <App />
+    <App />    
+  </AuthProvider>
   </Router>,
   document.getElementById('root')
 );

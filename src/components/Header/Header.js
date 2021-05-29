@@ -1,6 +1,7 @@
 //route
-import React from 'react';
+import React, { useContext } from 'react';
 import Icon from '../Icon/Icon';
+import {AuthContext} from '../Context/AuthContext';
 //import logo
 import LogoImage from '../../assets/images/logo.png';
 //style
@@ -15,6 +16,8 @@ import {
 
 //structure Header
 const Header = () => {
+    const { isAdmin } = useContext(AuthContext);
+    const { isLoggedIn } = useContext(AuthContext);
     return (
         <HeaderWrapper>
             <Inner>
@@ -25,9 +28,11 @@ const Header = () => {
                 <Nav>
                     <NavItem exact to="/">Home</NavItem>
                     <NavItem to="/events">Events</NavItem>
-                    <NavItem to="/login">Login</NavItem>
+                    {!isAdmin &&
+                    <NavItem to="/login">Login</NavItem>}
                     <NavItem to="/register">Register</NavItem>
-                    <NavItem to="/admin">Admin</NavItem>
+                    {isAdmin &&
+                    <NavItem to="/admin">Admin</NavItem>}
                 </Nav>
             </Inner>
         </HeaderWrapper>
